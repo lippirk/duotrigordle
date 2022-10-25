@@ -46,6 +46,17 @@ export const ALPHABET = new Set([
 ]);
 '''
 
+postamble = '''
+const postamble_check = (() => {
+  console.log("consts: postamble check");
+  for (const word of WORDS_TARGET) {
+    if (!WORDS_VALID.has(word)) {
+      console.error(`missing target word '${word}' from WORDS_VALID!`);
+    }
+  }
+})();
+'''
+
 def _main(target, valid, out):
     with open(target) as f:
         target_words = json.load(f)
@@ -58,12 +69,13 @@ def _main(target, valid, out):
         f.write('\n\n')
         f.write('export const WORDS_TARGET = [\n')
         for word in target_words:
-            f.write(f'  "{word}",\n')
+            f.write(f'  "{word.upper()}",\n')
         f.write('];\n\n\n')
         f.write('export const WORDS_VALID = new Set([\n')
         for word in valid_words:
-            f.write(f'  "{word}",\n')
-        f.write(']);\n')
+            f.write(f'  "{word.upper()}",\n')
+        f.write(']);\n\n\n')
+        f.write(postamble)
 
 def main():
     try:
