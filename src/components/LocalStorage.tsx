@@ -116,7 +116,7 @@ function deserializeGame(serialized: GameSerialized): GameState {
 }
 export function loadGameFromLocalStorage(dispatch: Dispatch) {
   const todaysId = getTodaysId();
-  const text = localStorage.getItem("duotrigordle-state");
+  const text = localStorage.getItem("duotrigordle-state-italian");
   const serialized = text && JSON.parse(text);
   if (isGameSerialized(serialized) && serialized.id === todaysId) {
     dispatch(loadGame({ game: deserializeGame(serialized) }));
@@ -126,7 +126,7 @@ export function loadGameFromLocalStorage(dispatch: Dispatch) {
 }
 function saveGameToLocalStorage(state: GameState) {
   localStorage.setItem(
-    "duotrigordle-state",
+    "duotrigordle-state-italian",
     JSON.stringify(serializeGame(state))
   );
 }
