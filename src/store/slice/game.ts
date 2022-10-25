@@ -9,7 +9,7 @@ import {
 } from "../../funcs";
 
 export type GameState = {
-  // Daily Duotrigordle number (seed for target words)
+  // Duotriparole number (seed for target words)
   id: number;
   // Current word input
   input: string;

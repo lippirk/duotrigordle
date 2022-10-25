@@ -62,7 +62,7 @@ export default function Result(props: ResultProps) {
       </div>
       <div className="kofi">
         <span dangerouslySetInnerHTML={{ __html: twemoji.parse("💛") }} />{" "}
-        Duotrigordle?{" "}
+        Duotriparole?{" "}
         <a target="_blank" href="https://ko-fi.com/H2H0BTKB3" rel="noreferrer">
           Buy me a{" "}
           <span dangerouslySetInnerHTML={{ __html: twemoji.parse("☕️") }} /> !
@@ -94,9 +94,9 @@ function getShareableText(
 ) {
   const text = [];
   if (practice) {
-    text.push(`Practice Duotrigordle\n`);
+    text.push(`Practice Duotriparole\n`);
   } else {
-    text.push(`Daily Duotrigordle #${id}\n`);
+    text.push(`Duotriparole #${id}\n`);
   }
   text.push(`Guesses: ${guessCount ?? "X"}/${NUM_GUESSES}\n`);
   if (timeElapsed !== null) {

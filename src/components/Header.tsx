@@ -40,9 +40,9 @@ function Row1() {
   const practice = useSelector((s) => s.game.practice);
   const [title, titleClass] = practice
     ? id < PRACTICE_MODE_MIN_ID
-      ? [`Historical Duotrigordle #${id}`, "historical"]
-      : [`Practice Duotrigordle`, "practice"]
-    : [`Daily Duotrigordle #${id}`, null];
+      ? [`Historical Duotriparole #${id}`, "historical"]
+      : [`Practice Duotriparole`, "practice"]
+    : [`Duotriparole #${id}`, null];
 
   // Refs so that the buttons are blurred on press
   // so that pressing enter again does not cause the
@@ -59,7 +59,7 @@ function Row1() {
   const handleNewClick = () => {
     newRef.current?.blur();
     const res = window.confirm(
-      "Are you sure you want to start a new Practice Duotrigordle?\n" +
+      "Are you sure you want to start a new Practice Duotriparole?\n" +
         "(Pro-tip: You can also press Ctrl+R)"
     );
     if (!res) return;
@@ -69,8 +69,8 @@ function Row1() {
   const handleHistClick = () => {
     histRef.current?.blur();
     const res = window.prompt(
-      "Play a Historical Duotrigordle!\n" +
-        "Enter a past Daily Duotrigordle # to play:"
+      "Play a Historical Duotriparole!\n" +
+        "Enter a past Duotriparole # to play:"
     );
     if (res === null) return;
     const num = parseInt(res ?? "", 10);
@@ -81,12 +81,12 @@ function Row1() {
     } else if (num >= PRACTICE_MODE_MIN_ID) {
       // Allow numbers greater than PRACTICE_MODE_MIN_ID for people that want to play with duotrigordle practice seed
       alert(
-        `Starting Practice Duotrigordle with seed ${num}\n` +
-          `(Note: you can set a Practice Duotrigordle seed ≥100000)`
+        `Starting Practice Duotriparole with seed ${num}\n` +
+          `(Note: you can set a Practice Duotriparole seed ≥100000)`
       );
       dispatch(startGame({ id: num, practice: true }));
     } else {
-      alert("Please enter a past Daily Duotrigordle #");
+      alert("Please enter a past Duotriparole #");
     }
   };
 

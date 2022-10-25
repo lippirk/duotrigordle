@@ -1,8 +1,8 @@
-# Duotrigordle
+# Duotriparole
 
 https://duotrigordle.com
 
-Put your skills to the test and solve thirty-two Wordles at once! You have 37 guesses to solve all 32 words. A new Duotrigordle available each day to solve.
+Put your skills to the test and solve thirty-two Wordles at once! You have 37 guesses to solve all 32 words. A new Duotriparole available each day to solve.
 
 ## Running Locally
 

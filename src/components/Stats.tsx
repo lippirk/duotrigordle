@@ -41,7 +41,7 @@ export default function Stats() {
     let input, val;
     while (true) {
       while (true) {
-        input = prompt("Enter Daily Duotrigordle #");
+        input = prompt("Enter Duotriparole #");
         if (!input) return;
         val = parseFloat(input);
         if (Number.isInteger(val) && val >= 1) {
