@@ -38,7 +38,7 @@ export default function App() {
   if (window.top !== window) {
     return (
       <p>
-        Play Duotrigordle at{" "}
+        Play Duotrimotdle at{" "}
         <a href="https://duotrigordle.com" target="_blank" rel="noreferrer">
           https://duotrigordle.com
         </a>{" "}
