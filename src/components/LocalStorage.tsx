@@ -116,7 +116,7 @@ function deserializeGame(serialized: GameSerialized): GameState {
 }
 export function loadGameFromLocalStorage(dispatch: Dispatch) {
   const todaysId = getTodaysId();
-  const text = localStorage.getItem("duotrigordle-state");
+  const text = localStorage.getItem("duotrigordle-state-french");
   const serialized = text && JSON.parse(text);
   if (isGameSerialized(serialized) && serialized.id === todaysId) {
     dispatch(loadGame({ game: deserializeGame(serialized) }));
@@ -126,7 +126,7 @@ export function loadGameFromLocalStorage(dispatch: Dispatch) {
 }
 function saveGameToLocalStorage(state: GameState) {
   localStorage.setItem(
-    "duotrigordle-state",
+    "duotrigordle-state-french",
     JSON.stringify(serializeGame(state))
   );
 }
@@ -145,12 +145,12 @@ function saveSettingsToLocalStorage(state: SettingsState) {
 
 // Serialization for stats
 function loadStatsFromLocalStorage(dispatch: Dispatch) {
-  const text = localStorage.getItem("duotrigordle-stats");
+  const text = localStorage.getItem("duotrigordle-stats-french");
   const stats = text && JSON.parse(text);
   if (stats) {
     dispatch(loadStats(stats));
   }
 }
 function saveStatsToLocalStorage(state: StatsState) {
-  localStorage.setItem("duotrigordle-stats", JSON.stringify(state));
+  localStorage.setItem("duotrigordle-stats-french", JSON.stringify(state));
 }
