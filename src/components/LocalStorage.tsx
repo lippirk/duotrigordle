@@ -145,12 +145,12 @@ function saveSettingsToLocalStorage(state: SettingsState) {
 
 // Serialization for stats
 function loadStatsFromLocalStorage(dispatch: Dispatch) {
-  const text = localStorage.getItem("duotrigordle-stats");
+  const text = localStorage.getItem("duotrigordle-stats-italian");
   const stats = text && JSON.parse(text);
   if (stats) {
     dispatch(loadStats(stats));
   }
 }
 function saveStatsToLocalStorage(state: StatsState) {
-  localStorage.setItem("duotrigordle-stats", JSON.stringify(state));
+  localStorage.setItem("duotrigordle-stats-italian", JSON.stringify(state));
 }
